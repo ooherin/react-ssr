@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { hydrateRoot } from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
@@ -8,6 +8,7 @@ const initialData =
 
 hydrateRoot(
   document.getElementById("root"),
+
   <BrowserRouter>
     <App
       popularMovies={initialData.movies}

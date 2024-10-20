@@ -6,6 +6,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 
 import { getMovieList } from "./movieList";
+
 import { StaticRouter } from "react-router-dom/server";
 
 const router = Router();
@@ -25,12 +26,12 @@ router.use("/", async (req, res) => {
               <script>
                 window.__INITIAL_DATA__ = {
                   movies: ${JSON.stringify(popularMovies)},
-                }
               </script>
             `
     );
 
     //3. 클라이언트의 뼈대 코드를 가져옴.
+
     const renderedApp = renderToString(
       <StaticRouter location={req}>
         <App popularMovies={popularMovies} detailMovie={null} />

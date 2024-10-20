@@ -11,5 +11,6 @@ export const fetchPopularMovies = async () => {
 
 export const fetchMovieDetail = async (id) => {
   const response = await fetch(TMDB_MOVIE_DETAIL_URL(id), FETCH_OPTIONS);
+
   return await response.json();
 };
